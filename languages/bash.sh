@@ -774,6 +774,14 @@ ssh -CqTnN -D localhost:1080  user@202.115.8.1
 # 终端下正确设置 ALT 键和 BackSpace 键
 http://www.skywind.me/blog/archives/2021
 
+##############################################################################
+# k8s
+##############################################################################
+# retag image with ctr
+ctr --namespace=k8s.io image tag docker.io/library/httpd:latest k8s.gcr.io/httpd:latest
+nerdctl -n k8s.io tag docker.io/library/httpd:latest k8s.gcr.io/httpd:latest
+
+
 
 ##############################################################################
 # 有用的函数
