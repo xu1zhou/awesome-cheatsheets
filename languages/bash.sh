@@ -58,7 +58,14 @@ whatis bash         # 查看某个命令的解释，一句话告诉你这是干�
 
 clear               # 清初屏幕内容
 reset               # 重置终端（当你不小心 cat 了一个二进制，终端状态乱掉时使用）
+# https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html
+set -e              # 它使得脚本只要发生错误，就终止执行,set -e根据返回值来判断，一个命令是否运行失败。
+set -o errexit      # 但是，某些命令的非零返回值可能不表示失败，或者开发者希望在命令失败的情况下，脚本继续执行下去。这时可以暂时关闭set -e，该命令执行结束后，再重新打开set -e
 
+set -o pipefail     # 只要一个子命令失败，整个管道命令就失败，脚本就会终止执行
+set -u/set -o nounset # Treat unset variables as an error when substituting 
+set -E              # If set, any trap on ERR is inherited by shell functions, command substitutions, 
+                    # and commands executed in a subshell environment. The ERR trap is normally not inherited in such cases.
 
 ##############################################################################
 # 目录操作
