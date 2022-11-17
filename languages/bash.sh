@@ -46,7 +46,7 @@ CTRL+X CTRL+E       # 用你指定的编辑器，编辑当前命令
 ##############################################################################
 # BASH 基本操作
 ##############################################################################
-
+-                   # naked dash allows you to specify standard input or output rather than an actual file name example: nc -l -p 12345 | tar xvzf -
 exit                # 退出当前登陆
 env                 # 显示环境变量
 echo $SHELL         # 显示你在使用什么 SHELL
